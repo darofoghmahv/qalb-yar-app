@@ -24,6 +24,19 @@ const clinicalInfo = {
       age: { title: 'راهنمای امتیازدهی سن (Age)', content: <p>سن بالای ۶۵ سال ۲ امتیاز، سن بین ۴۵ تا ۶۴ سال ۱ امتیاز، و سن کمتر از ۴۵ سال ۰ امتیاز دارد.</p> },
       risk: { title: 'راهنمای امتیازدهی عوامل خطر (Risk Factors)', content: <p>وجود ۳ عامل خطر یا بیشتر (دیابت، سیگار، فشار خون، چربی خون، سابقه خانوادگی، چاقی) یا بیماری آترواسکلروتیک شناخته‌شده (CAD, PAD, CVA) ۲ امتیاز دارد. وجود ۱ یا ۲ عامل خطر ۱ امتیاز دارد.</p> },
       troponin: { title: 'راهنمای امتیازدهی تروپونین (Troponin)', content: <p>اگر تروپونین بیش از ۳ برابر حد بالای نرمال باشد ۲ امتیاز، اگر بین ۱ تا ۳ برابر باشد ۱ امتیاز، و اگر در محدوده نرمال باشد ۰ امتیاز دارد.</p> },
+  },
+  paraclinicalInfo: {
+      bnp: { title: 'راهنمای تفسیر BNP', content: <p>BNP (B-type Natriuretic Peptide) در پاسخ به کشش سلول‌های قلبی (مثلا در نارسایی قلبی) آزاد می‌شود. مقادیر آن با سن افزایش می‌یابد. مقادیر بالای 450 pg/mL در افراد بالای 50 سال و بالای 900 در افراد بالای 75 سال به شدت مطرح‌کننده نارسایی قلبی است.</p> },
+      bunCr: { title: 'راهنمای تفسیر BUN/Creatinine', content: <p>این دو آزمایش عملکرد کلیه را نشان می‌دهند. بیماری مزمن کلیوی (CKD) یک عامل خطر مهم برای بیماری‌های قلبی-عروقی است. کراتینین در مردان معمولا کمی بالاتر از زنان است. همچنین، برخی داروهای قلبی می‌توانند بر عملکرد کلیه تأثیر بگذارند.</p> },
+  },
+  riskFactorsInfo: { title: 'اهمیت عوامل خطر', content: <p>شناسایی عوامل خطر به ارزیابی ریسک کلی بیمار برای ابتلا به بیماری‌های قلبی-عروقی کمک می‌کند. هرچه تعداد عوامل خطر بیشتر باشد، احتمال وقوع حوادث قلبی در آینده بالاتر است.</p>},
+  comorbiditiesInfo: { title: 'اهمیت بیماری‌های زمینه‌ای', content: <p>بیماری‌های زمینه‌ای مانند بیماری عروق کرونر، دیابت و بیماری مزمن کلیوی به طور مستقیم بر سلامت قلب تأثیر می‌گذارند و ریسک بیمار را به شدت افزایش می‌دهند.</p>},
+  physicalExamInfo: {
+      vitals: { title: 'اهمیت علائم حیاتی', content: <p>تاکی‌کاردی، برادی‌کاردی، هیپرتانسیون، هیپوتانسیون یا افت اشباع اکسیژن همگی می‌توانند نشانه‌های مهمی از یک مشکل قلبی-عروقی حاد باشند.</p>},
+      jvp: { title: 'راهنمای معاینه JVP', content: <p>فشار ورید ژوگولار (JVP) تخمینی از فشار دهلیز راست است. JVP برجسته (Elevated) معمولا نشانه افزایش حجم مایعات یا نارسایی سمت راست قلب است.</p>},
+      carotids: { title: 'راهنمای سمع کاروتید', content: <p>وجود برویی (Bruit) در شریان کاروتید می‌تواند نشانه تنگی آترواسکلروتیک باشد که یک عامل خطر مهم برای سکته مغزی است.</p>},
+      pulses: { title: 'راهنمای معاینه نبض‌ها', content: <p>نبض‌ها معمولا با مقیاس ۰ تا ۴+ درجه‌بندی می‌شوند. نبض ضعیف یا نامتقارن می‌تواند نشانه بیماری عروق محیطی (PAD) یا دایسکشن آئورت باشد.</p>},
+      skin: { title: 'اهمیت معاینه پوست', content: <p>پوست سرد، مرطوب یا سیانوتیک (کبودی) می‌تواند نشانه کاهش برون‌ده قلبی و شوک کاردیوژنیک باشد.</p>},
   }
 };
 const rosSystems = { general: { label: 'عمومی', symptoms: ['تب', 'لرز', 'کاهش وزن', 'افزایش وزن', 'تعریق شبانه', 'خستگی', 'بی‌اشتهایی'] }, integumentary: { label: 'پوست و مو', symptoms: ['راش', 'خارش', 'زخم', 'تغییر رنگ', 'ریزش مو', 'تغییرات ناخن'] }, head: { label: 'سر و گردن', symptoms: ['سردرد', 'ضربه به سر', 'گلودرد', 'گرفتگی صدا', 'توده گردنی'] }, eyes: { label: 'چشم', symptoms: ['تاری دید', 'درد چشم', 'دوبینی', 'قرمزی', 'ترشح'] }, ent: { label: 'گوش، حلق، بینی', symptoms: ['کاهش شنوایی', 'وزوز گوش', 'خونریزی بینی', 'گرفتگی بینی', 'ترشح از بینی'] }, cardiovascular: { label: 'قلبی-عروقی', symptoms: ['درد قفسه سینه', 'تپش قلب', 'ارتوپنه', 'تنگی نفس حمله‌ای شبانه (PND)', 'ادم محیطی', 'لنگش متناوب', 'سنکوپ'] }, respiratory: { label: 'تنفسی', symptoms: ['سرفه', 'خلط', 'هموپتزی (خلط خونی)', 'ویزینگ', 'درد پلورتیک', 'تنگی نفس'] }, gastrointestinal: { label: 'گوارشی', symptoms: ['تهوع', 'استفراغ', 'درد شکم', 'اسهال', 'یبوست', 'زردی', 'سوزش سر دل', 'خونریزی گوارشی'] }, genitourinary: { label: 'ادراری-تناسلی', symptoms: ['سوزش ادرار', 'تکرر ادرار', 'هماچوری (خون در ادرار)', 'کاهش فشار ادرار', 'بی‌اختیاری'] }, musculoskeletal: { label: 'اسکلتی-عضلانی', symptoms: ['درد مفاصل', 'تورم مفاصل', 'درد عضلانی', 'کمردرد', 'محدودیت حرکت'] }, neurological: { label: 'عصبی', symptoms: ['سرگیجه', 'ضعف کانونی', 'تشنج', 'تغییر سطح هوشیاری', 'پارستزی (گزگز)', 'لرزش'] }, endocrine: { label: 'غدد', symptoms: ['پلی‌اوری (پرادراری)', 'پلی‌دیپسی (پرنوشی)', 'عدم تحمل گرما/سرما', 'تغییرات وزن'] }, psychiatric: { label: 'روانپزشکی', symptoms: ['اضطراب', 'افسردگی', 'اختلال خواب', 'افکار خودکشی'] }, };
@@ -62,8 +75,18 @@ const emptyPatient = {
     allergies: '',
     ros: Object.keys(rosSystems).reduce((acc, key) => ({ ...acc, [key]: [] }), {}),
     medications: [{ name: '', dosage: '', isCustom: true }],
-    paraclinical: { troponin: 'منفی', bnp: '', cxr: { findings: [], other: '' } },
-    physicalExam: { general: 'هوشیار، بدون دیسترس واضح', jvp: '', heartSounds: 'S1, S2 طبیعی، بدون صدای اضافی', lungSounds: 'سمع ریه واضح', extremities: 'بدون ادم محیطی' },
+    paraclinical: { troponin: 'منفی', bnp: '', bun: '', creatinine: '', cxr: { findings: [], other: '' } },
+    physicalExam: {
+        general: 'هوشیار، بدون دیسترس واضح',
+        vitals: { bp: '', hr: '', rr: '', o2sat: '' },
+        jvp: '',
+        carotids: 'بدون برویی',
+        heartSounds: 'S1, S2 طبیعی، بدون صدای اضافی',
+        lungSounds: 'سمع ریه واضح',
+        extremities: 'بدون ادم محیطی',
+        pulses: 'نبض‌ها قرینه و ۲+',
+        skin: 'گرم و خشک'
+    },
     ecg: { rhythm: 'سینوسی', rate: '', axis: 'نرمال', pr: '', qrs: '', qt: '', qtc: '', stChanges: [], stLocation: [], hasQWaves: false, qWaveLocation: [], morphologies: [], other: '' },
     plan: {}
 };
@@ -128,6 +151,7 @@ export default function App() {
         hpi: JSON.parse(JSON.stringify(emptyPatient.hpi)),
         riskFactors: JSON.parse(JSON.stringify(emptyPatient.riskFactors)),
         comorbidities: JSON.parse(JSON.stringify(emptyPatient.comorbidities)),
+        physicalExam: JSON.parse(JSON.stringify(emptyPatient.physicalExam)),
     };
     setActivePatient(newPatient);
     setView('form');
@@ -445,7 +469,7 @@ const ChiefComplaint = ({ data, setData, openModal, isEducationalMode }) => {
         </div>
     );
 };
-const RiskFactorsAndComorbidities = ({ data, updateData }) => {
+const RiskFactorsAndComorbidities = ({ data, updateData, openModal, isEducationalMode }) => {
     const { riskFactors, comorbidities } = data;
 
     const riskFactorItems = [
@@ -466,7 +490,11 @@ const RiskFactorsAndComorbidities = ({ data, updateData }) => {
     return (
         <div className="animate-fade-in space-y-8">
             <div>
-                <h2 className="text-2xl font-bold mb-4 text-slate-700 flex items-center gap-2"><Activity className="text-red-500"/>عوامل خطر قلبی-عروقی</h2>
+                <h2 className="text-2xl font-bold mb-4 text-slate-700 flex items-center gap-2">
+                    <Activity className="text-red-500"/>
+                    عوامل خطر قلبی-عروقی
+                    <InfoButton onClick={() => openModal(clinicalInfo.riskFactorsInfo.title, clinicalInfo.riskFactorsInfo.content)} isEducationalMode={isEducationalMode} />
+                </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {riskFactorItems.map(item => (
                         <label key={item.id} className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
@@ -477,7 +505,11 @@ const RiskFactorsAndComorbidities = ({ data, updateData }) => {
                 </div>
             </div>
             <div>
-                <h2 className="text-2xl font-bold mb-4 text-slate-700 flex items-center gap-2"><ClipboardList className="text-red-500"/>بیماری‌های زمینه‌ای (Comorbidities)</h2>
+                <h2 className="text-2xl font-bold mb-4 text-slate-700 flex items-center gap-2">
+                    <ClipboardList className="text-red-500"/>
+                    بیماری‌های زمینه‌ای (Comorbidities)
+                    <InfoButton onClick={() => openModal(clinicalInfo.comorbiditiesInfo.title, clinicalInfo.comorbiditiesInfo.content)} isEducationalMode={isEducationalMode} />
+                </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                      {comorbidityItems.map(item => (
                         <label key={item.id} className="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
@@ -497,14 +529,111 @@ const RiskFactorsAndComorbidities = ({ data, updateData }) => {
 const MedicalHistory = ({ data, updateData }) => { return ( <div className="animate-fade-in"> <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><BookUser className="text-red-500" />سوابق پزشکی و حساسیت</h2> <div className="space-y-6"> <div> <label className="font-semibold text-slate-600 block mb-2">سوابق پزشکی گذشته (PMH)</label> <textarea rows="3" value={data.pastMedicalHistory} onChange={(e) => updateData('pastMedicalHistory', null, e.target.value)} className="p-3 w-full border rounded-lg" placeholder="بیماری‌های مزمن دیگر مانند بیماری‌های تیروئید، کلیوی و..."/> </div> <div> <label className="font-semibold text-slate-600 block mb-2">سوابق جراحی (PSH)</label> <textarea rows="3" value={data.pastSurgicalHistory} onChange={(e) => updateData('pastSurgicalHistory', null, e.target.value)} className="p-3 w-full border rounded-lg" placeholder="جراحی‌های گذشته مانند CABG, PCI, آپاندکتومی و..."/> </div> <div> <label className="font-semibold text-slate-600 block mb-2">حساسیت‌ها (Allergies)</label> <input type="text" value={data.allergies} onChange={(e) => updateData('allergies', null, e.target.value)} className="p-3 w-full border rounded-lg" placeholder="حساسیت‌های دارویی یا غذایی. در صورت عدم وجود بنویسید 'ندارد'."/> </div> </div> </div> ); };
 const ReviewOfSystems = ({ data: {ros}, updateData }) => { const handleCheckboxChange = (system, symptom) => { const currentSymptoms = ros[system] || []; const newSymptoms = currentSymptoms.includes(symptom) ? currentSymptoms.filter(s => s !== symptom) : [...currentSymptoms, symptom]; updateData('ros', system, newSymptoms); }; return ( <div className="animate-fade-in"> <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><ClipboardList className="text-red-500" />مرور سیستم‌ها (ROS)</h2> <p className="text-slate-500 mb-6 -mt-4">علائم مثبتی که بیمار در هر سیستم گزارش می‌کند را انتخاب کنید.</p> <div className="space-y-4"> {Object.entries(rosSystems).map(([systemKey, systemValue]) => ( <details key={systemKey} className="bg-slate-50 rounded-lg p-3 border" open> <summary className="font-bold text-slate-800 cursor-pointer">{systemValue.label}</summary> <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pt-4"> {systemValue.symptoms.map(symptom => ( <label key={symptom} className="flex items-center gap-2 p-2 border rounded-md cursor-pointer bg-white"> <input type="checkbox" checked={(ros[systemKey] || []).includes(symptom)} onChange={() => handleCheckboxChange(systemKey, symptom)} className="form-checkbox h-4 w-4 text-red-500 rounded border-slate-300 focus:ring-red-500" /> <span className="text-slate-700 text-sm">{symptom}</span> </label> ))} </div> </details> ))} </div> </div> ); };
 const Medications = ({ data: {medications}, setData }) => { const handleMedChange = (index, field, value) => { const newMeds = [...medications]; if (field === 'name' && !newMeds[index].isCustom) { const selectedMed = commonMedications.find(m => m.name === value); newMeds[index].name = value; newMeds[index].dosage = selectedMed ? selectedMed.dosage : ''; } else { newMeds[index][field] = value; } setData(prev => ({ ...prev, medications: newMeds })); }; const toggleCustom = (index) => { const newMeds = [...medications]; newMeds[index].isCustom = !newMeds[index].isCustom; newMeds[index].name = ''; newMeds[index].dosage = ''; setData(prev => ({ ...prev, medications: newMeds })); }; const addMed = () => setData(prev => ({ ...prev, medications: [...prev.medications, { name: '', dosage: '', isCustom: true }] })); const removeMed = (index) => setData(prev => ({ ...prev, medications: medications.filter((_, i) => i !== index) })); return ( <div className="animate-fade-in"> <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><Pill className="text-red-500"/>تاریخچه دارویی</h2> <div className="space-y-4"> {medications.map((med, index) => ( <div key={index} className="p-3 bg-slate-50 rounded-lg border space-y-2"> <div className="flex flex-col md:flex-row gap-2 items-center"> {med.isCustom ? ( <> <input type="text" value={med.name} onChange={e => handleMedChange(index, 'name', e.target.value)} placeholder="نام داروی سفارشی" className="p-2 border border-slate-300 rounded-lg w-full focus:ring-2 focus:ring-red-300"/> <input type="text" value={med.dosage} onChange={e => handleMedChange(index, 'dosage', e.target.value)} placeholder="دوز مصرفی" className="p-2 border border-slate-300 rounded-lg w-full focus:ring-2 focus:ring-red-300"/> </> ) : ( <> <select value={med.name} onChange={e => handleMedChange(index, 'name', e.target.value)} className="p-2 border border-slate-300 rounded-lg w-full bg-white focus:ring-2 focus:ring-red-300"> <option value="">یک دارو انتخاب کنید...</option> {commonMedications.map(m => <option key={m.name} value={m.name}>{m.name}</option>)} </select> <input type="text" value={med.dosage} onChange={e => handleMedChange(index, 'dosage', e.target.value)} placeholder="دوز پیشنهادی" className="p-2 border border-slate-300 rounded-lg w-full focus:ring-2 focus:ring-red-300"/> </> )} <button onClick={() => removeMed(index)} className="text-red-500 hover:text-red-700 p-2 rounded-full bg-red-100 hover:bg-red-200 transition"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> </button> </div> <button onClick={() => toggleCustom(index)} className="text-sm text-blue-600 hover:underline"> {med.isCustom ? 'انتخاب از لیست داروها' : 'ورود داروی سفارشی'} </button> </div> ))} </div> <button onClick={addMed} className="mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> افزودن دارو </button> </div> ); };
-const PhysicalExam = ({ data: {physicalExam}, updateData, openModal, isEducationalMode }) => { const handleQuickAdd = (field, text) => { const currentText = physicalExam[field] || ''; const newText = currentText ? `${currentText}, ${text}` : text; updateData('physicalExam', field, newText); }; const fields = [ { id: 'general', label: 'وضعیت عمومی', quickAdds: ['هوشیار', 'بی‌قرار', 'رنگ‌پریده'] }, { id: 'jvp', label: 'فشار ورید ژوگولار (JVP)', quickAdds: ['طبیعی', 'برجسته (Elevated)'] }, { id: 'heartSounds', label: 'صداهای قلبی', quickAdds: ['S1, S2 نرمال', 'سوفل سیستولیک', 'S3'], info: clinicalInfo.heartSounds }, { id: 'lungSounds', label: 'صداهای ریوی', quickAdds: ['سمع واضح', 'کراکل (Rales)', 'ویزینگ'], info: clinicalInfo.lungSounds }, { id: 'extremities', label: 'معاینه اندام‌ها', quickAdds: ['بدون ادم', 'ادم گوده‌گذار +1', 'نبض‌ها قرینه'] }, ]; return ( <div className="animate-fade-in"> <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><Stethoscope className="text-red-500"/>یافته‌های معاینه فیزیکی</h2> <div className="space-y-6"> {fields.map(field => ( <div key={field.id}> <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">{field.label} {field.info && <InfoButton onClick={() => openModal(field.info.title, field.info.content)} isEducationalMode={isEducationalMode} />}</label> <textarea rows="2" value={physicalExam[field.id]} onChange={e => updateData('physicalExam', field.id, e.target.value)} className="p-3 w-full border rounded-lg" placeholder={`یافته‌های مربوط به ${field.label}...`}/> <div className="flex flex-wrap gap-2 mt-2"> {field.quickAdds.map(qa => <QuickAddButton key={qa} text={qa} onClick={() => handleQuickAdd(field.id, qa)} />)} </div> </div> ))} </div> </div> ); };
-const ParaclinicalStudies = ({ data: {paraclinical}, updateData, openModal, isEducationalMode }) => {
+const PhysicalExam = ({ data, updateData, openModal, isEducationalMode }) => {
+    const { physicalExam } = data;
+    const updateVitals = (field, value) => {
+        updateData('physicalExam', 'vitals', { ...physicalExam.vitals, [field]: value });
+    };
+
+    return (
+        <div className="animate-fade-in">
+            <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><Stethoscope className="text-red-500"/>یافته‌های معاینه فیزیکی</h2>
+            <div className="space-y-6">
+                <details className="bg-slate-50 rounded-lg p-3 border" open>
+                    <summary className="font-bold text-slate-800 cursor-pointer flex items-center justify-between">
+                        <span>علائم حیاتی</span>
+                        <InfoButton onClick={() => openModal(clinicalInfo.physicalExamInfo.vitals.title, clinicalInfo.physicalExamInfo.vitals.content)} isEducationalMode={isEducationalMode} />
+                    </summary>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                        <div><label className="mb-1 font-medium text-sm text-slate-600 block">فشار خون</label><input type="text" value={physicalExam.vitals.bp} onChange={e => updateVitals('bp', e.target.value)} className="p-2 w-full border rounded-lg" placeholder="e.g. 120/80"/></div>
+                        <div><label className="mb-1 font-medium text-sm text-slate-600 block">ضربان قلب</label><input type="number" value={physicalExam.vitals.hr} onChange={e => updateVitals('hr', e.target.value)} className="p-2 w-full border rounded-lg" placeholder="bpm"/></div>
+                        <div><label className="mb-1 font-medium text-sm text-slate-600 block">تعداد تنفس</label><input type="number" value={physicalExam.vitals.rr} onChange={e => updateVitals('rr', e.target.value)} className="p-2 w-full border rounded-lg" placeholder="breaths/min"/></div>
+                        <div><label className="mb-1 font-medium text-sm text-slate-600 block">اشباع اکسیژن</label><input type="number" value={physicalExam.vitals.o2sat} onChange={e => updateVitals('o2sat', e.target.value)} className="p-2 w-full border rounded-lg" placeholder="%"/></div>
+                    </div>
+                </details>
+
+                <details className="bg-slate-50 rounded-lg p-3 border" open>
+                     <summary className="font-bold text-slate-800 cursor-pointer">معاینه عمومی و گردن</summary>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">وضعیت عمومی</label>
+                            <input type="text" value={physicalExam.general} onChange={e => updateData('physicalExam', 'general', e.target.value)} className="p-3 w-full border rounded-lg"/>
+                        </div>
+                        <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">JVP <InfoButton onClick={() => openModal(clinicalInfo.physicalExamInfo.jvp.title, clinicalInfo.physicalExamInfo.jvp.content)} isEducationalMode={isEducationalMode} /></label>
+                            <input type="text" value={physicalExam.jvp} onChange={e => updateData('physicalExam', 'jvp', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="مثلا طبیعی یا برجسته"/>
+                        </div>
+                         <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">شریان کاروتید <InfoButton onClick={() => openModal(clinicalInfo.physicalExamInfo.carotids.title, clinicalInfo.physicalExamInfo.carotids.content)} isEducationalMode={isEducationalMode} /></label>
+                            <input type="text" value={physicalExam.carotids} onChange={e => updateData('physicalExam', 'carotids', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="مثلا بدون برویی"/>
+                        </div>
+                     </div>
+                </details>
+
+                <details className="bg-slate-50 rounded-lg p-3 border" open>
+                     <summary className="font-bold text-slate-800 cursor-pointer">معاینه قلب و ریه</summary>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">صداهای قلبی <InfoButton onClick={() => openModal(clinicalInfo.heartSounds.title, clinicalInfo.heartSounds.content)} isEducationalMode={isEducationalMode} /></label>
+                            <textarea rows="2" value={physicalExam.heartSounds} onChange={e => updateData('physicalExam', 'heartSounds', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="S1, S2 نرمال، بدون سوفل یا صدای اضافی..."/>
+                        </div>
+                         <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">صداهای ریوی <InfoButton onClick={() => openModal(clinicalInfo.lungSounds.title, clinicalInfo.lungSounds.content)} isEducationalMode={isEducationalMode} /></label>
+                            <textarea rows="2" value={physicalExam.lungSounds} onChange={e => updateData('physicalExam', 'lungSounds', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="سمع ریه واضح، وجود کراکل یا ویزینگ..."/>
+                        </div>
+                     </div>
+                </details>
+
+                <details className="bg-slate-50 rounded-lg p-3 border" open>
+                     <summary className="font-bold text-slate-800 cursor-pointer">معاینه اندام‌ها و پوست</summary>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">اندام‌ها</label>
+                            <input type="text" value={physicalExam.extremities} onChange={e => updateData('physicalExam', 'extremities', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="ادم، کلابینگ، سیانوز..."/>
+                        </div>
+                        <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">نبض‌های محیطی <InfoButton onClick={() => openModal(clinicalInfo.physicalExamInfo.pulses.title, clinicalInfo.physicalExamInfo.pulses.content)} isEducationalMode={isEducationalMode} /></label>
+                            <input type="text" value={physicalExam.pulses} onChange={e => updateData('physicalExam', 'pulses', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="مثلا قرینه و ۲+"/>
+                        </div>
+                         <div>
+                            <label className="mb-2 font-semibold text-slate-600 flex items-center gap-2">پوست <InfoButton onClick={() => openModal(clinicalInfo.physicalExamInfo.skin.title, clinicalInfo.physicalExamInfo.skin.content)} isEducationalMode={isEducationalMode} /></label>
+                            <input type="text" value={physicalExam.skin} onChange={e => updateData('physicalExam', 'skin', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="گرم و خشک، سرد و مرطوب..."/>
+                        </div>
+                     </div>
+                </details>
+            </div>
+        </div>
+    );
+};
+const ParaclinicalStudies = ({ data, updateData, openModal, isEducationalMode }) => {
+    const { paraclinical, info } = data;
     const cxrFindingsOptions = ['کاردیومگالی', 'ادم ریوی', 'افیوژن پلور', 'مدیاستن پهن', 'پنوموتوراکس'];
     const handleCxrCheckboxChange = (finding) => {
         const currentFindings = paraclinical.cxr.findings || [];
         const newFindings = currentFindings.includes(finding) ? currentFindings.filter(f => f !== finding) : [...currentFindings, finding];
         updateData('paraclinical', 'cxr', { ...paraclinical.cxr, findings: newFindings });
     };
+
+    const LabInput = ({ label, value, onChange, unit, labKey, info, patientInfo }) => {
+        const normalRange = getLabNormalRanges(labKey, patientInfo);
+        const status = getLabInterpretation(value, normalRange);
+        return (
+            <div>
+                <label className="font-semibold text-slate-600 block mb-2 flex items-center gap-2">
+                    {label}
+                    {info && <InfoButton onClick={() => openModal(info.title, info.content)} isEducationalMode={isEducationalMode} />}
+                </label>
+                <div className="flex items-center gap-2">
+                    <input type="number" value={value} onChange={onChange} className="p-3 w-full border rounded-lg" placeholder={`مقدار ${label}...`}/>
+                    <span className="text-sm text-slate-500">{unit}</span>
+                    {isEducationalMode && status.text && (
+                        <span className={`text-xs font-bold px-2 py-1 rounded-full ${status.color}`}>{status.text}</span>
+                    )}
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className="animate-fade-in">
             <h2 className="text-2xl font-bold mb-6 text-slate-700 flex items-center gap-2"><Beaker className="text-red-500"/>بررسی‌های پاراکلینیک</h2>
@@ -518,7 +647,9 @@ const ParaclinicalStudies = ({ data: {paraclinical}, updateData, openModal, isEd
                             <option>مثبت (بیش از ۳ برابر نرمال)</option>
                         </select>
                     </div>
-                    <div> <label className="font-semibold text-slate-600 block mb-2">BNP / Pro-BNP</label> <input type="text" value={paraclinical.bnp} onChange={(e) => updateData('paraclinical', 'bnp', e.target.value)} className="p-3 w-full border rounded-lg" placeholder="مقدار BNP..."/> </div>
+                    <LabInput label="BNP" value={paraclinical.bnp} onChange={e => updateData('paraclinical', 'bnp', e.target.value)} unit="pg/mL" labKey="bnp" info={clinicalInfo.paraclinicalInfo.bnp} patientInfo={info} />
+                    <LabInput label="BUN" value={paraclinical.bun} onChange={e => updateData('paraclinical', 'bun', e.target.value)} unit="mg/dL" labKey="bun" info={clinicalInfo.paraclinicalInfo.bunCr} patientInfo={info} />
+                    <LabInput label="Creatinine" value={paraclinical.creatinine} onChange={e => updateData('paraclinical', 'creatinine', e.target.value)} unit="mg/dL" labKey="creatinine" info={clinicalInfo.paraclinicalInfo.bunCr} patientInfo={info} />
                 </div>
                 <div>
                     <label className="font-semibold text-slate-600 flex items-center gap-2 mb-2">یافته‌های عکس قفسه سینه (CXR) <InfoButton onClick={() => openModal(clinicalInfo.cxrInterpretation.title, clinicalInfo.cxrInterpretation.content)} isEducationalMode={isEducationalMode} /></label>
@@ -589,7 +720,7 @@ const ECGFindings = ({ data: {ecg}, updateData, openModal, isEducationalMode }) 
 };
 const SummaryAndPlan = ({ data, onSave, goToStep, isEducationalMode }) => {
   const ddx = useMemo(() => generateDDx(data), [data]);
-  const planSuggestions = useMemo(() => generatePlan(ddx), [ddx]);
+  const planSuggestions = useMemo(() => generatePlan(ddx), [data]);
   
   const handlePrint = () => { window.print(); };
 
@@ -604,12 +735,20 @@ const SummaryAndPlan = ({ data, onSave, goToStep, isEducationalMode }) => {
     text += `** سوابق پزشکی، جراحی و دارویی **\n- PMH: ${pastMedicalHistory || 'ندارد'}\n- PSH: ${pastSurgicalHistory || 'ندارد'}\n- DH: ${medications.filter(m=>m.name).map(m => m.name).join(', ') || 'ندارد'}\n\n`;
     text += `** حساسیت‌ها **\n${allergies || 'ندارد'}\n\n`;
     text += `** مرور سیستم‌ها (ROS) **\n${Object.entries(ros).map(([sys, syms]) => syms.length > 0 ? `- ${rosSystems[sys].label}: ${syms.join(', ')}` : null).filter(Boolean).join('\n') || 'نکته مثبتی ذکر نشد.'}\n\n`;
-    text += `** معاینه فیزیکی **\n- عمومی: ${physicalExam.general}\n- JVP: ${physicalExam.jvp}\n- قلب: ${physicalExam.heartSounds}\n- ریه: ${physicalExam.lungSounds}\n- اندام‌ها: ${physicalExam.extremities}\n\n`;
-    text += `** پاراکلینیک **\n- تروپونین: ${paraclinical.troponin || '---'}\n- BNP: ${paraclinical.bnp || '---'}\n- CXR: ${paraclinical.cxr.findings?.join(', ') || '---'}. ${paraclinical.cxr.other || ''}\n\n`;
+    
+    const {vitals} = physicalExam;
+    text += `** معاینه فیزیکی **\n- علائم حیاتی: BP: ${vitals.bp || '---'}, HR: ${vitals.hr || '---'}, RR: ${vitals.rr || '---'}, O2Sat: ${vitals.o2sat || '---'}%\n- عمومی: ${physicalExam.general}\n- گردن: JVP ${physicalExam.jvp}, کاروتید ${physicalExam.carotids}\n- قلب: ${physicalExam.heartSounds}\n- ریه: ${physicalExam.lungSounds}\n- اندام‌ها: ${physicalExam.extremities}, نبض‌ها ${physicalExam.pulses}\n- پوست: ${physicalExam.skin}\n\n`;
+    
+    const bnpInterpretation = getLabInterpretation(paraclinical.bnp, getLabNormalRanges('bnp', info));
+    const bunInterpretation = getLabInterpretation(paraclinical.bun, getLabNormalRanges('bun', info));
+    const crInterpretation = getLabInterpretation(paraclinical.creatinine, getLabNormalRanges('creatinine', info));
+
+    text += `** پاراکلینیک **\n- تروپونین: ${paraclinical.troponin || '---'}\n- BNP: ${paraclinical.bnp || '---'} ${bnpInterpretation.text ? `(${bnpInterpretation.text})` : ''}\n- BUN: ${paraclinical.bun || '---'} ${bunInterpretation.text ? `(${bunInterpretation.text})` : ''}\n- Creatinine: ${paraclinical.creatinine || '---'} ${crInterpretation.text ? `(${crInterpretation.text})` : ''}\n- CXR: ${paraclinical.cxr.findings?.join(', ') || '---'}. ${paraclinical.cxr.other || ''}\n\n`;
+    
     text += `** نوار قلب (ECG) **\n- ریتم: ${ecg.rhythm}, ریت: ${ecg.rate || '---'} bpm, محور: ${ecg.axis}\n- فواصل: PR=${ecg.pr || '---'}ms, QRS=${ecg.qrs || '---'}ms, QTc=${ecg.qtc || '---'}ms\n${ecg.stChanges.length > 0 ? `- تغییرات ST/T: ${ecg.stChanges.join(', ')}\n` : ''}${ecg.morphologies.length > 0 ? `- مورفولوژی: ${ecg.morphologies.join(', ')}\n` : ''}\n`;
     
     if (isEducationalMode) {
-        text += `** تشخیص‌های افتراقی (DDx) **\n${ddx.length > 0 ? ddx.map((d, i) => `${i + 1}. ${d.name}`).join('\n') : '---'}`;
+        text += `** تشخیص‌های افتراقی (DDx) **\n${ddx.length > 0 ? ddx.map((d, i) => `${i + 1}. ${d.name} (احتمال: ${d.strengthText})`).join('\n') : '---'}`;
     }
     return text;
   }, [data, ddx, isEducationalMode]);
@@ -625,7 +764,15 @@ const SummaryAndPlan = ({ data, onSave, goToStep, isEducationalMode }) => {
                     <div className="mt-8 print-section">
                         <h3 className="text-xl font-bold text-slate-700 flex items-center gap-2"><BrainCircuit className="text-red-500" />دستیار تشخیص افتراقی</h3>
                         <div className="mt-4 space-y-3">
-                        {ddx.length > 0 ? ( ddx.map(d => ( <div key={d.name} className="p-3 bg-yellow-50 border-r-4 border-yellow-400"> <p className="font-bold text-yellow-800">{d.name}</p> <p className="text-sm text-yellow-700">{d.reason}</p> </div> )) ) : ( <p className="text-slate-500">اطلاعات کافی برای پیشنهاد تشخیص وجود ندارد.</p> )}
+                        {ddx.length > 0 ? ( ddx.map(d => ( 
+                            <div key={d.name} className={`p-3 border-r-4 ${d.strengthColor}`}> 
+                                <div className="flex justify-between items-center">
+                                    <p className={`font-bold ${d.strengthTextColor}`}>{d.name}</p>
+                                    <span className={`text-xs font-bold px-2 py-1 rounded-full ${d.strengthColor}`}>{d.strengthText}</span>
+                                </div>
+                                <p className="text-sm text-slate-600 mt-1">{d.reason}</p> 
+                            </div> 
+                        )) ) : ( <p className="text-slate-500">اطلاعات کافی برای پیشنهاد تشخیص وجود ندارد.</p> )}
                         </div>
                     </div>
 
@@ -649,6 +796,47 @@ const SummaryAndPlan = ({ data, onSave, goToStep, isEducationalMode }) => {
 const NavigationButtons = ({ step, totalSteps, nextStep, prevStep }) => ( <div className="flex justify-between mt-8 no-print-view"> <button onClick={prevStep} disabled={step === 1} className="bg-slate-300 text-slate-700 font-bold py-2 px-6 rounded-lg hover:bg-slate-400 transition disabled:bg-slate-200 disabled:cursor-not-allowed flex items-center gap-2"><ChevronRight />قبلی</button> <button onClick={nextStep} disabled={step === totalSteps} className="bg-red-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 transition disabled:bg-red-300 disabled:cursor-not-allowed flex items-center gap-2">بعدی<ChevronLeft /></button> </div> );
 
 // --- Calculators & Logic ---
+const getLabNormalRanges = (labKey, patientInfo) => {
+    const age = parseInt(patientInfo?.age, 10);
+    const gender = patientInfo?.gender;
+
+    switch (labKey) {
+        case 'bnp':
+            if (age > 75) return { max: 900 };
+            if (age > 50) return { max: 450 };
+            return { max: 100 };
+        case 'creatinine':
+            if (gender === 'زن') return { min: 0.5, max: 1.1 };
+            return { min: 0.6, max: 1.2 }; // Default to male
+        case 'bun':
+            return { min: 7, max: 20 };
+        default:
+            return {};
+    }
+};
+
+const getLabInterpretation = (value, normalRange) => {
+    const numValue = parseFloat(value);
+    if (isNaN(numValue)) return { text: null, color: '' };
+
+    const { min, max } = normalRange;
+
+    if (min !== undefined && max !== undefined) {
+        if (numValue >= min && numValue <= max) return { text: 'نرمال', color: 'bg-green-100 text-green-800' };
+        if (numValue < min) return { text: 'پایین‌تر از نرمال', color: 'bg-red-100 text-red-800' };
+        return { text: 'بالاتر از نرمال', color: 'bg-red-100 text-red-800' };
+    }
+    if (max !== undefined) {
+        if (numValue > max) return { text: 'بالاتر از نرمال', color: 'bg-red-100 text-red-800' };
+        return { text: 'نرمال', color: 'bg-green-100 text-green-800' };
+    }
+    if (min !== undefined) {
+        if (numValue < min) return { text: 'پایین‌تر از نرمال', color: 'bg-red-100 text-red-800' };
+        return { text: 'نرمال', color: 'bg-green-100 text-green-800' };
+    }
+    return { text: null, color: '' };
+};
+
 const HeartScoreCalculator = ({ data, isEducationalMode, openModal }) => {
     const [history, setHistory] = useState(0);
     const [ecg, setEcg] = useState(0);
@@ -854,34 +1042,61 @@ function formatHpi(data) {
 function generateDDx(data) {
     const ddx = [];
     const { chiefComplaint, hpi, riskFactors, comorbidities, physicalExam, ecg, paraclinical } = data;
-    const allRisks = {...riskFactors, ...comorbidities};
+    
+    const getStrength = (score) => {
+        if (score >= 3) return { strength: 3, text: 'زیاد', color: 'bg-red-100 border-red-500', textColor: 'text-red-800' };
+        if (score === 2) return { strength: 2, text: 'متوسط', color: 'bg-yellow-100 border-yellow-500', textColor: 'text-yellow-800' };
+        return { strength: 1, text: 'کم', color: 'bg-green-100 border-green-500', textColor: 'text-green-800' };
+    };
 
-    if (chiefComplaint === 'chestPain') {
-        if (ecg.stChanges.includes('ST Elevation') || paraclinical.troponin.startsWith('مثبت')) { ddx.push({ name: 'سکته قلبی حاد (MI)', reason: 'درد قفسه سینه به همراه تغییرات ECG یا تروپونین مثبت.' }); }
-        else if (hpi.chestPain.quality?.includes('تیز')) { ddx.push({ name: 'پریکاردیت یا آمبولی ریه', reason: 'ماهیت تیز و پلورتیک درد.' }); }
+    // ACS/MI
+    let acsScore = 0;
+    if (hpi.chestPain?.quality?.includes('فشاری')) acsScore++;
+    if (ecg.stChanges.includes('ST Elevation') || ecg.stChanges.includes('ST Depression')) acsScore += 2;
+    if (paraclinical.troponin?.startsWith('مثبت')) acsScore += 2;
+    if (Object.values(riskFactors).filter(Boolean).length >= 2) acsScore++;
+    if (acsScore > 0) {
+        const { strength, text, color, textColor } = getStrength(acsScore);
+        ddx.push({ name: 'سندرم کرونری حاد (ACS/MI)', reason: 'بر اساس شرح حال، ECG و/یا تروپونین.', strength, strengthText: text, strengthColor: color, strengthTextColor: textColor });
     }
-    if (chiefComplaint === 'shortnessOfBreath') {
-        if (physicalExam.lungSounds?.includes('کراکل') || (paraclinical.bnp && parseFloat(paraclinical.bnp) > 400) || paraclinical.cxr?.findings?.includes('ادم ریوی')) { ddx.push({ name: 'نارسایی احتقانی قلب (CHF)', reason: 'تنگی نفس به همراه یافته‌های CHF (کراکل، BNP بالا، ادم ریوی در CXR).' }); }
+
+    // CHF
+    let chfScore = 0;
+    if (chiefComplaint === 'shortnessOfBreath') chfScore++;
+    if (physicalExam.lungSounds?.includes('کراکل')) chfScore += 2;
+    if (paraclinical.bnp && parseFloat(paraclinical.bnp) > 450) chfScore += 2;
+    if (paraclinical.cxr?.findings?.includes('ادم ریوی')) chfScore++;
+    if (physicalExam.jvp?.includes('برجسته')) chfScore++;
+    if (chfScore > 0) {
+        const { strength, text, color, textColor } = getStrength(chfScore);
+        ddx.push({ name: 'نارسایی احتقانی قلب (CHF)', reason: 'بر اساس تنگی نفس، معاینه و/یا BNP.', strength, strengthText: text, strengthColor: color, strengthTextColor: textColor });
     }
+
+    // Pericarditis
+    if (hpi.chestPain?.quality?.includes('تیز') && hpi.chestPain?.palliative?.includes('خم شدن')) {
+        ddx.push({ name: 'پریکاردیت', reason: 'درد تیز که با خم شدن به جلو بهتر می‌شود.', ...getStrength(2) });
+    }
+    
+    // DVT/PE
     if (chiefComplaint === 'edema' && hpi.edema.location?.includes('یک‌طرفه')) {
-        ddx.push({ name: 'ترومبوز ورید عمقی (DVT)', reason: 'ادم یک‌طرفه اندام تحتانی.' });
+        ddx.push({ name: 'ترومبوز ورید عمقی (DVT)', reason: 'ادم یک‌طرفه اندام تحتانی.', ...getStrength(3) });
     }
-    if (chiefComplaint === 'claudication') {
-        ddx.push({ name: 'بیماری عروق محیطی (PAD)', reason: 'درد پا هنگام فعالیت (لنگش).' });
+    if (chiefComplaint === 'shortnessOfBreath' && hpi.chestPain?.quality?.includes('پلورتیک')) {
+         ddx.push({ name: 'آمبولی ریه (PE)', reason: 'تنگی نفس ناگهانی با درد پلورتیک.', ...getStrength(2) });
     }
-    if (chiefComplaint === 'syncope' && hpi.syncope.palpitations) {
-        ddx.push({ name: 'آریتمی قلبی منجر به سنکوپ', reason: 'سنکوپ به همراه تپش قلب.' });
+
+    // Arrhythmia
+    if (chiefComplaint === 'palpitations' || (chiefComplaint === 'syncope' && hpi.syncope.palpitations)) {
+        ddx.push({ name: 'آریتمی قلبی', reason: 'شرح حال تپش قلب یا سنکوپ همراه با تپش قلب.', ...getStrength(2) });
     }
-    if (ddx.length === 0 && (Object.values(allRisks).some(v => v) || data.info.age > 40) && chiefComplaint === 'chestPain') {
-        ddx.push({ name: 'بیماری عروق کرونر (آنژین)', reason: 'درد قفسه سینه در بیمار با عوامل خطر قلبی.' });
-    }
-    return ddx;
+
+    return ddx.sort((a, b) => b.strength - a.strength);
 }
 
 function generatePlan(ddx) {
     const plans = [];
     const diagnoses = ddx.map(d => d.name);
-    if (diagnoses.includes('سکته قلبی حاد (MI)')) {
+    if (diagnoses.includes('سندرم کرونری حاد (ACS/MI)')) {
         plans.push({ title: 'برنامه درمانی پیشنهادی برای ACS/MI', actions: ['فعال‌سازی کت لب (در صورت امکان)', 'تجویز آسپرین 324mg و کلوپیدوگرل', 'شروع هپارین یا انوکساپارین', 'کنترل درد با نیترات یا مورفین', 'تجویز بتابلاکر و استاتین با دوز بالا'] });
     }
     if (diagnoses.includes('نارسایی احتقانی قلب (CHF)')) {
